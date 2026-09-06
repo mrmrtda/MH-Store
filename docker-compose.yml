@@ -1,0 +1,14 @@
+services:
+  mh:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      ADMIN_USER: admin
+      ADMIN_PASS: CHANGE_ME_TO_A_LONG_RANDOM_PASSWORD
+    volumes:
+      - ./data:/app/data
+      - ./uploads:/app/uploads
+    restart: unless-stopped
